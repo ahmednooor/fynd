@@ -1,6 +1,6 @@
 # fynd
 
-[![PyPI](https://img.shields.io/pypi/v/nine.svg)](https://pypi.org/project/fynd/)
+[![PyPI](https://img.shields.io/badge/pypi-v1.1.0-blue.svg)](https://pypi.org/project/fynd/)
 
 > `fynd` makes it super simple to search for strings in complex list/dict data structures.
 > It returns a list of paths from root of the data structure to the found strings.
