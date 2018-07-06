@@ -52,6 +52,6 @@ RESULT = fynd('hulalala').inside(COLLECTION)
 ```
 
 ## Meta
-License: MIT
-Author: Ahmed Noor
-Source: https://github.com/ahmednooor/fynd
+- License: MIT
+- Author: Ahmed Noor
+- Source: https://github.com/ahmednooor/fynd
