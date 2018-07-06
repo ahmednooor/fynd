@@ -6,7 +6,7 @@ python:
   - "3.6"
 # command to install dependencies
 install:
-  - pip install --user pytest # just to be sure
+  - pip install pytest
 # command to run tests
 script:
-  - pytest tests.py --verbose # or py.test for Python versions 3.5 and below
+  - pytest tests.py --verbose
