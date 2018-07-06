@@ -4,10 +4,9 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
-  - "3.7"
 # command to install dependencies
 install:
-  - pip install pytest # just to be sure
+  - pip install --user pytest # just to be sure
 # command to run tests
 script:
   - pytest tests.py --verbose # or py.test for Python versions 3.5 and below
