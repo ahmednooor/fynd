@@ -37,6 +37,16 @@ def test_not_found_case():
         and result_b == []
     )
 
+def test_immutability():
+    result_a = fynd('blah').inside(COLLECTION)
+    result_b = fynd('lorem').inside(COLLECTION)
+    assert (
+        result_a == [['blogposts', 0, 'text'], ['blogposts', 1, 'text']]
+        and result_b == [['blogposts', 0, 'title']]
+        and COLLECTION['blogposts'][0]['text'] == 'Dolor Sit Amet Blah Blah Blah'
+        and COLLECTION['blogposts'][0]['title'] == 'Lorem Ipsum'
+    )
+
 def main():
     result = fynd('blah').inside(COLLECTION)
     print("Searched For 'blah': \n", result)
