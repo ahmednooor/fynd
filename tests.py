@@ -37,14 +37,20 @@ def test_not_found_case():
         and result_b == []
     )
 
-def test_immutability():
+def test_collection_integrity():
     result_a = fynd('blah').inside(COLLECTION)
     result_b = fynd('lorem').inside(COLLECTION)
+    result_c = fynd('Fox').inside(COLLECTION)
+    result_d = fynd('Fox').case_sensitive().inside(COLLECTION)
     assert (
         result_a == [['blogposts', 0, 'text'], ['blogposts', 1, 'text']]
         and result_b == [['blogposts', 0, 'title']]
-        and COLLECTION['blogposts'][0]['text'] == 'Dolor Sit Amet Blah Blah Blah'
+        and result_c == [['blogposts', 1, 'title'], ['blogposts', 1, 'text']]
+        and result_d == [['blogposts', 1, 'title']]
         and COLLECTION['blogposts'][0]['title'] == 'Lorem Ipsum'
+        and COLLECTION['blogposts'][0]['text'] == 'Dolor Sit Amet Blah Blah Blah'
+        and COLLECTION['blogposts'][1]['title'] == 'Brown Fox'
+        and COLLECTION['blogposts'][1]['text'] == 'The quick brown fox jumps over blah'
     )
 
 def main():

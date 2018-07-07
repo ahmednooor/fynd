@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="fynd",
-    version="1.2.0",
+    version="1.3.0",
     author="Ahmed Noor",
     author_email="m.ahmednoor7@yahoo.com",
     description="A super simple string searching library for complex list/dict structures",

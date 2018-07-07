@@ -1,10 +1,9 @@
 # fynd
 
-[![PyPI](https://img.shields.io/badge/pypi-v1.2.0-blue.svg)](https://pypi.org/project/fynd/)
+[![PyPI](https://img.shields.io/badge/pypi-v1.3.0-blue.svg)](https://pypi.org/project/fynd/)
 [![Build Status](https://travis-ci.org/ahmednooor/fynd.svg?branch=master)](https://travis-ci.org/ahmednooor/fynd)
 
-> `fynd` makes it super simple to search for strings in complex list/dict data structures.
-> It returns a list of paths from root of the data structure to the found strings.
+> `fynd` makes it super simple to search for strings in complex list/dict (JSON like) data structures. It returns a list of paths from root of the data structure to the found strings.
 
 ## Installation
 ```sh

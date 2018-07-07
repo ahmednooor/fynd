@@ -1,13 +1,11 @@
 """
 Fynd: A super simple string searching library
     for complex list/dict structures
-Version: 1.2.0
+Version: 1.3.0
 GitHub: https://github.com/ahmednooor/fynd
 License: MIT
 Author: Ahmed Noor (https://github.com/ahmednooor)
 """
-
-from copy import deepcopy
 
 
 class Fynd:
@@ -44,26 +42,21 @@ class Fynd:
         if path is None:
             path = []
 
-        if isinstance(target, (list, tuple, dict)):
+        if isinstance(target, str):
+            if self._case_sensitive is True \
+                    and search_string in target:
+                self._paths.append(path + [])
+                return
+
+            elif self._case_sensitive is False \
+                    and search_string.lower() in target.lower():
+                self._paths.append(path + [])
+                return
+
+        elif isinstance(target, (list, tuple, dict)):
             for key, val in enumerate(target):
                 if isinstance(target, dict):
                     key = val
-
-                if isinstance(target[key], str):
-                    target_string = target[key] + ""
-                    if self._case_sensitive is True \
-                            and search_string in target_string:
-                        path.append(key)
-                        self._paths.append(deepcopy(path))
-                        path.pop()
-
-                    elif self._case_sensitive is False \
-                            and search_string.lower() in target_string.lower():
-                        path.append(key)
-                        self._paths.append(deepcopy(path))
-                        path.pop()
-
-                elif isinstance(target[key], (list, tuple, dict)):
-                    path.append(key)
-                    self._search(search_string, target[key], deepcopy(path))
-                    path.pop()
+                path.append(key)
+                self._search(search_string, target[key], path)
+                path.pop()
